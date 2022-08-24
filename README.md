@@ -23,8 +23,6 @@ docker-compose up --build
 
 ## Dependencies
 ### Credentials
---------------------------------
-
 We currently support loading credentials from:   
 - environment variables
   - AWS_ACCESS_KEY_ID
@@ -33,7 +31,6 @@ We currently support loading credentials from:
 - ~/.aws/credentials
 
 ### Policy
---------------------------------
 You need to have the credentials for a user with at least this policy:
 ```
 {
