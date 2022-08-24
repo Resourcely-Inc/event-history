@@ -17,10 +17,6 @@ import csv
 AWS_REGION = "us-west-2"
 CLOUDTRAIL_EVENT_HISTORY_DAYS = 90
 
-# Set up AWS credentials, otherwise it will read from ~/.aws/credentials
-aws_access_key_id = ("",)
-aws_secret_access_key = ""
-
 # logger config
 logger = logging.getLogger(__name__)
 logging.basicConfig(
@@ -30,25 +26,6 @@ logging.getLogger().setLevel(logging.INFO)
 
 
 # pydantic model
-class Event(BaseModel):
-    Function: str
-    Resources: List[str] = []
-
-
-class Identity(BaseModel):
-    Name: str
-    Type: str
-
-
-class EventSourceEvent(BaseModel):
-    Identity: Identity
-    Events: List[Event] = []
-
-
-class EventQueueLookupMessage(BaseModel):
-    Events: List[EventSourceEvent] = []
-
-
 class ResourcesEvent(BaseModel):
     ResourceType: str
     ResourceName: Optional[str]
@@ -197,8 +174,6 @@ class EventHandler(BaseModel):
         client: CloudTrailClient = boto3.client(
             "cloudtrail",
             region_name=region,
-            # aws_access_key_id=aws_access_key_id,
-            # aws_secret_access_key=aws_secret_access_key
         )
         start_time = datetime.datetime.now() - datetime.timedelta(
             int(CLOUDTRAIL_EVENT_HISTORY_DAYS)
