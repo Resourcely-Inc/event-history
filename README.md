@@ -1,27 +1,11 @@
 
 # Event History
 This script counts the total number of resources created in the last 90 days in a specific AWS region.  
+## Setup
 
-## Running Locally
-Your python version should be  >= 3.8  
-
-Install Dependencies:
-```
-pip3 install -r requirements.txt
-```
-Run Script:
-```
-python3 main.py -r <region>
-```
-Regions are listed below in [Available Regions](#available-regions)
-
-## Running Docker (will run in all regions)
-Run: 
-```
-docker-compose up --build
-```
-
-## Dependencies
+### Dependencies
+- Python >= 3.8
+- Docker (optional)
 ### Credentials
 We currently support loading credentials from:   
 - environment variables
@@ -46,7 +30,23 @@ You need to have the credentials for a user with at least this policy:
     ]
 }
 ```
+## Running Locally
 
+Install Dependencies:
+```
+pip3 install -r requirements.txt
+```
+Run Script:
+```
+python3 main.py -r <region>
+```
+Regions are listed below in [Available Regions](#available-regions)
+
+## Running Docker (will run in all regions)
+Run: 
+```
+docker-compose up --build
+```
 ## Example Resource Output
 The output will be in results.csv, and will look like the example below:
 
