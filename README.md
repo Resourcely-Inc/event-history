@@ -3,7 +3,6 @@
 This script counts the total number of resources created in the last 90 days in a specific AWS region.  
 
 ## Running Locally
---------------------------------
 Your python version should be  >= 3.8  
 
 Install Dependencies:
@@ -17,14 +16,12 @@ python3 main.py -r <region>
 Regions are listed below in [Available Regions](#available-regions)
 
 ## Running Docker (will run in all regions)
---------------------------------
 Run: 
 ```
 docker-compose up --build
 ```
 
 ## Dependencies
---------------------------------
 ### Credentials
 --------------------------------
 
@@ -54,7 +51,6 @@ You need to have the credentials for a user with at least this policy:
 ```
 
 ## Example Resource Output
---------------------------------
 The output will be in results.csv, and will look like the example below:
 
 |     | CreateBucket | CreateCluster | CreateRegistry | CreateSecurityGroup | CreateSubnet | CreateVpc | CreateTrail | UpdateTrail | UpdateAuthorizer | CreateDBInstance | CreateDBCluster | CreateInternetGateway | CreateNatGateway |     |     |     |     |
@@ -66,7 +62,6 @@ The output will be in results.csv, and will look like the example below:
 | yhaix | 0   | 1   | 1   | 1   | 4   | 1   | 0   | 0   | 0   | 0   | 0   | 2   | 3   |
 
 ## Example User Agent Output
---------------------------------
 | user_agent | num_resources |
 | ---        | ---           |
 | aws-sdk-go-v2/1.16.7 os/macos lang/go/1.18 md/GOOS/darwin md/GOARCH/arm64 api/iam/1.18.5 | 46  |
@@ -76,7 +71,6 @@ The output will be in results.csv, and will look like the example below:
 | aws-sdk-go/1.44.19 (go1.18; darwin; arm64)                                               | 8   |
 
 ## Available Regions
---------------------------------
 - all (runs all regions)
 - af-south-1
 - ap-east-1
