@@ -1,0 +1,4 @@
+boto3==1.24.50
+mypy_boto3_cloudtrail==1.24.36.post1
+pandas==1.4.3
+pydantic==1.9.2

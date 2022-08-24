@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  event-history:
+    build:
+      context: ./
+    # environment:
+    #   - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    #   - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    #   - AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN
+    volumes:
+      - $HOME/.aws/credentials:/tmp/.aws/credentials
+      - ./:/app
