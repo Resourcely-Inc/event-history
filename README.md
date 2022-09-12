@@ -30,6 +30,14 @@ You need to have the credentials for a user with at least this policy:
     ]
 }
 ```
+
+### Troubleshooting
+If you see the following error in a specific region, it's likely because you don't have CloudTrail access for that region:
+```
+event-history_1  | An error occurred (UnrecognizedClientException) when calling the LookupEvents operation: 
+The security token included in the request is invalid
+```
+
 ## Running Locally
 
 Install Dependencies:
